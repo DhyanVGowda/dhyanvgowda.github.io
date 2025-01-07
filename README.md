@@ -8,7 +8,7 @@
 [![Latest Release](https://img.shields.io/badge/Latest%20Release-03%20Jan%202025-yellow.svg)](https://github.com/dhyanvgowda/dhyanvgowda.github.io)
 <a href="https://github.com/dhyanvgowda/dhyanvgowda.github.io/blob/master/LICENSE"><img alt="License" src="http://img.shields.io/:license-mit-blue.svg?style=flat-square?style=flat-square" /></a>
 
-<img width="100%" alt="Portfolio Screenshot" src="https://github.com/dhyanvgowda/dhyanvgowda.github.io/assets/86096184/fd0d70b2-1505-4adf-8b0c-427df58607e3">
+<img width="100%" alt="Portfolio Screenshot" src="src/jpg/Portfolio_Screenshot.JPEG">
 
 :star: Star me on GitHub — it helps!
 
