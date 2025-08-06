@@ -197,3 +197,63 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo(0, 0);
   });
 });
+
+// Interactive Company Logos Functionality
+function showJobDetails(companyId) {
+  // Remove active class from all company logos (including duplicates)
+  const allLogos = document.querySelectorAll(".company-logo-item");
+  allLogos.forEach((logo) => {
+    logo.classList.remove("active");
+  });
+
+  // Remove active class from all job sections
+  const allJobs = document.querySelectorAll(".job-section");
+  allJobs.forEach((job) => {
+    job.classList.remove("active");
+  });
+
+  // Add active class to clicked logo and its duplicate
+  const activeLogo = document.getElementById(companyId + "-logo");
+  const activeLogoDup = document.getElementById(companyId + "-logo-dup");
+  if (activeLogo) {
+    activeLogo.classList.add("active");
+  }
+  if (activeLogoDup) {
+    activeLogoDup.classList.add("active");
+  }
+
+  // Add active class to corresponding job section
+  const activeJob = document.getElementById(companyId + "-job");
+  if (activeJob) {
+    activeJob.classList.add("active");
+
+    // Smooth scroll to the job descriptions container
+    const jobDescriptionsContainer = document.querySelector(
+      ".job-descriptions-container"
+    );
+    if (jobDescriptionsContainer) {
+      jobDescriptionsContainer.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }
+}
+
+// Initialize the experience section with the first job active
+document.addEventListener("DOMContentLoaded", function () {
+  // Set the first job (MG Health Tech) as active by default
+  showJobDetails("mg-health-tech");
+
+  // Add pause/resume functionality for the scrolling animation
+  const scrollContainer = document.querySelector(".company-logos-scroll");
+  if (scrollContainer) {
+    scrollContainer.addEventListener("mouseenter", function () {
+      this.style.animationPlayState = "paused";
+    });
+
+    scrollContainer.addEventListener("mouseleave", function () {
+      this.style.animationPlayState = "running";
+    });
+  }
+});

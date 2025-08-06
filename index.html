@@ -77,21 +77,21 @@ What are you doing here?! you sneaky developer...
             </a>
           </li>
 
-          <li class="skills" class="navbar-tabs-li" data-aos="fade-down" data-aos-delay="500">
+          <li class="experience" class="navbar-tabs-li" data-aos="fade-down" data-aos-delay="500">
+            <a href="#experience" aria-label="experience menu button">
+              &#60;/Experience&#62;
+            </a>
+          </li>
+
+          <li class="skills" class="navbar-tabs-li" data-aos="fade-down" data-aos-delay="700">
             <a href="#skills" aria-label="skills menu button">
               &#60;/Skills&#62;
             </a>
           </li>
 
-          <li class="projects" class="navbar-tabs-li" data-aos="fade-down" data-aos-delay="700">
+          <li class="projects" class="navbar-tabs-li" data-aos="fade-down" data-aos-delay="900">
             <a href="#projects" aria-label="projects menu button">
               &#60;/Projects&#62;
-            </a>
-          </li>
-
-          <li class="experience" class="navbar-tabs-li" data-aos="fade-down" data-aos-delay="900">
-            <a href="#experience" aria-label="experience menu button">
-              &#60;/Experience&#62;
             </a>
           </li>
         </ul>
@@ -126,6 +126,11 @@ What are you doing here?! you sneaky developer...
             &#60;/AboutMe&#62;
           </a>
         </li>
+        <li id="experience-mobile-tab" class="mobile-navbar-tabs-li experience" onclick="hidemenubyli()">
+          <a href="#experience" tabindex="0" aria-label="experience menu button">
+            &#60;/Experience&#62;
+          </a>
+        </li>
         <li id="skills-mobile-tab" class="mobile-navbar-tabs-li skills" onclick="hidemenubyli()">
           <a href="#skills" tabindex="0" aria-label="skills menu button">
             &#60;/Skills&#62;
@@ -134,10 +139,6 @@ What are you doing here?! you sneaky developer...
         <li id="projects-mobile-tab" class="mobile-navbar-tabs-li projects" onclick="hidemenubyli()">
           <a href="#projects" tabindex="0" aria-label="projects menu button">
             &#60;/Projects&#62;
-          </a>
-        <li id="experience-mobile-tab" class="mobile-navbar-tabs-li experience" onclick="hidemenubyli()">
-          <a href="#experience" tabindex="0" aria-label="experience menu button">
-            &#60;/Experience&#62;
           </a>
         </li>
       </ul>
@@ -223,10 +224,10 @@ What are you doing here?! you sneaky developer...
           </div>
         </article>
         <p id="info-para" data-aos="fade-up" data-aos-delay="600">
-          <span class="fade-in">Graduate Computer Science Student at Illinois Tech, driven by a passion for building impactful projects that enrich people’s lives.</span>
-          <span class="fade-in">I am eager to tackle real-world challenges and develop innovative solutions that bring value and efficiency to everyday experiences.</span>
-          <span class="fade-in">With experience in machine learning, full-stack development, and Java programming, I have solid skills in Python and Java and always eager to learn and grow.</span>
-          <span class="fade-in">I’m excited to collaborate, innovate, and continue my journey of learning to contribute meaningfully to the tech world.</span>
+          <span class="fade-in">Graduate Computer Science Student at Illinois Tech with a 4.0 GPA, specializing in AI/ML and full-stack development.</span>
+          <span class="fade-in">Experienced Teaching Assistant guiding 100+ students in Generative AI applications and software project management.</span>
+          <span class="fade-in">Passionate about building innovative AI solutions, from medical RAG systems to automated patient summarization platforms.</span>
+          <span class="fade-in">Skilled in Python, Java, React, FastAPI, and cutting-edge AI frameworks including LangChain, AutoGen, and TensorFlow.</span>
           <br />
         </p>
         <div class="contact-btn-div" data-aos="fade-up" data-aos-delay="800">
@@ -272,19 +273,19 @@ What are you doing here?! you sneaky developer...
         <div class="info-dp-section">
           <div class="about-info">
             <p tabindex="0">
-              Hi, I’m Dhyan, a Graduate Computer Science Student at Illinois Tech with a deep passion for technology and innovation. I thrive on creating impactful solutions that make a meaningful difference in people’s lives.
+              Hi, I'm Dhyan, a Graduate Computer Science Student at Illinois Tech with a 4.0 GPA, specializing in AI/ML and full-stack development. I'm passionate about building innovative solutions that make a meaningful difference in people's lives.
             </p>
             <br />
             <p tabindex="0">
-              I hold a bachelor’s degree in Computer Science from JSS Science and Technology University, India. My journey in tech is fueled by curiosity and a drive to stay updated with the latest advancements in the field. I’m particularly fascinated by current affairs, aviation, and emerging technologies, and I strive to incorporate this knowledge into the software I build.
+              I hold a Bachelor's degree in Computer Science from JSS Science and Technology University, India. Currently pursuing my Master's degree at Illinois Tech, my journey in tech is fueled by curiosity and a drive to stay updated with the latest advancements in AI/ML, cloud computing, and emerging technologies.
             </p>
             <br />
             <p tabindex="0">
-              I’m excited about joining innovative teams where I can learn from skilled engineers, contribute to groundbreaking projects, and grow as a developer. Beyond my love for technology, I’m passionate about traveling, exploring new cultures, and connecting with people from diverse backgrounds.
+              As a Teaching Assistant at Illinois Tech, I guide 100+ students in Generative AI applications and software project management. I'm excited about joining innovative teams where I can contribute to groundbreaking AI projects and grow as a developer.
             </p>
             <br />
             <p tabindex="0">
-              Let’s create something extraordinary together!!
+              Let's create something extraordinary together!!
             </p>
              <!-- Resume button -->
       <button class="resume-btn" id="resume-btn" onclick="openURL()">
@@ -307,6 +308,106 @@ What are you doing here?! you sneaky developer...
     </section>
     <!-- about section ends  -->
 
+  <section class="experience-section-container" id="experience" data-aos="fade-up">
+    <div class="experience-section">
+      <div class="section-heading">
+        <h2 class="section-heading-article" tabindex="0" aria-label="Experience heading">
+          &#60;/Experience&#62;
+        </h2>
+        <p class="sectionHeadingP"></p>
+      </div>
+
+      <div class="info-dp-section">
+        <div class="about-info">
+          <!-- Horizontal Scrolling Company Logos -->
+          <div class="company-logos-scroll-container" data-aos="fade-up">
+            <div class="company-logos-scroll">
+              <!-- MG Health Tech Logo -->
+              <div class="company-logo-item active" id="mg-health-tech-logo" onclick="showJobDetails('mg-health-tech')">
+                <img src="src/jpg/MGHealthtechlogo_LinkedIn.jpeg" alt="MG Health Tech Logo" tabindex="0" aria-label="MG Health Tech company logo" />
+                <div class="company-name">MG Health Tech</div>
+              </div>
+              
+              <!-- Illinois Tech Logo -->
+              <div class="company-logo-item" id="illinois-tech-logo" onclick="showJobDetails('illinois-tech')">
+                <img src="src/png/iit.png" alt="Illinois Institute of Technology Logo" tabindex="0" aria-label="Illinois Institute of Technology logo" />
+                <div class="company-name">Illinois Institute of Technology</div>
+              </div>
+              
+              <!-- Torus Solutions Logo -->
+              <div class="company-logo-item" id="torus-solutions-logo" onclick="showJobDetails('torus-solutions')">
+                <img src="src/png/torus.png" alt="Torus Solutions Logo" tabindex="0" aria-label="Torus Solutions company logo" />
+                <div class="company-name">Torus Solutions</div>
+              </div>
+              
+              <!-- Duplicate logos for seamless scrolling -->
+              <div class="company-logo-item" id="mg-health-tech-logo-dup" onclick="showJobDetails('mg-health-tech')">
+                <img src="src/jpg/MGHealthtechlogo_LinkedIn.jpeg" alt="MG Health Tech Logo" tabindex="0" aria-label="MG Health Tech company logo" />
+                <div class="company-name">MG Health Tech</div>
+              </div>
+              
+              <div class="company-logo-item" id="illinois-tech-logo-dup" onclick="showJobDetails('illinois-tech')">
+                <img src="src/png/iit.png" alt="Illinois Institute of Technology Logo" tabindex="0" aria-label="Illinois Institute of Technology logo" />
+                <div class="company-name">Illinois Institute of Technology</div>
+              </div>
+              
+              <div class="company-logo-item" id="torus-solutions-logo-dup" onclick="showJobDetails('torus-solutions')">
+                <img src="src/png/torus.png" alt="Torus Solutions Logo" tabindex="0" aria-label="Torus Solutions company logo" />
+                <div class="company-name">Torus Solutions</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Job Descriptions (appear below when logo is clicked) -->
+          <div class="job-descriptions-container">
+            <div id="mg-health-tech-job" class="job-section active">
+              <h3 style="color: #00ff88; margin-bottom: 15px; font-size: 2.5rem;">Software Development Intern - MG Health Tech</h3>
+              <p style="font-style: italic; color: #888; margin-bottom: 10px;">Texas, United States (Remote) | June 2025 - August 2025</p>
+              <p tabindex="0">
+                Built an automated patient summarization system using React, FastAPI, GPT-4o/DeepSeek R1, achieving ≤10 second processing and 5-15 minute intake reduction. Engineered a multi-format delivery system generating branded PDF, QR codes, Apple/Google Wallet passes, and FHIR-ready JSON with SSE-S3 encryption and 24-hour auto-deletion.
+              </p>
+              <br />
+              <p tabindex="0">
+                Deployed a custom MedGemma model on Hugging Face for medical image analysis with private API integration, outperforming GPT-4 Vision in clinical accuracy benchmarks. Engineered a medical RAG system with LangChain, FAISS, Llama 3, and BGE-Small-EN embeddings, attaining 1000+ words/second PDF processing.
+              </p>
+            </div>
+            
+            <div id="illinois-tech-job" class="job-section">
+              <h3 style="color: #00ff88; margin-bottom: 15px; font-size: 2.5rem;">Teaching Assistant - Illinois Institute of Technology</h3>
+              <p style="font-style: italic; color: #888; margin-bottom: 10px;">Chicago, Illinois | January 2025 - May 2025</p>
+              <p tabindex="0">
+                Guided 100+ graduate students through advanced Generative AI applications and software project management. Developed comprehensive lab materials for AutoGen, LangGraph, and LlamaIndex frameworks. Conducted 15+ live demonstrations for complex full-stack projects involving React/Flask microservices and TensorFlow/LSTM models.
+              </p>
+              <br />
+              <p tabindex="0">
+                Mentored students across 10+ advanced technologies including RAG pipeline orchestrations, vector embeddings, ElasticSearch, Docker containerization, and OpenAI/Replicate/Ollama API integrations. Provided 1-on-1 technical support during office hours, resolving challenges across Python, JavaScript, AI agent architectures, and Agile/Scrum methodologies.
+              </p>
+            </div>
+            
+            <div id="torus-solutions-job" class="job-section">
+              <h3 style="color: #00ff88; margin-bottom: 15px; font-size: 2.5rem;">Software Development Intern - Torus Solutions</h3>
+              <p style="font-style: italic; color: #888; margin-bottom: 10px;">Mysuru, India | February 2023 - November 2023</p>
+              <p tabindex="0">
+                Architected full-stack food distribution platform with Java 17, Spring Boot, MySQL/JPA, React 18 featuring multi-role authentication, enabling intelligent NGO-donor matching and reducing coordination time by 60%. Constructed comprehensive donation management system with 10MB image upload, BLOB storage, Spring Mail notifications, and geographic matching algorithms.
+              </p>
+              <br />
+               <!-- Internship_letter button -->
+              <button class="resume-btn" id="resume-btn" onclick="openURL1()">
+                <div class="sign">
+                  <svg viewBox="0 0 640 512">
+                    <path
+                      d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144zm79-167l80 80c9.4 9.4 24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-39 39V184c0-13.3-10.7-24-24-24s-24 10.7-24 24V318.1l-39-39c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9z" />
+                  </svg>
+                </div>
+                <div class="text">Internship Certificate</div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- experience section ends  -->
     <section class="skills-section-container" id="skills">
       <div class="skills-section">
         <div class="section-heading" data-aos="fade-up">
@@ -398,6 +499,61 @@ What are you doing here?! you sneaky developer...
               <span class="tooltip">MS Office</span>
             </li>
 
+            <li class="tech-stack-box" data-aos="fade-up">
+              <img src="./src/svg/typescript.svg" alt="TypeScript skill" class="tech-stack-logo" />
+              <span class="tooltip">TypeScript</span>
+            </li>
+
+            <li class="tech-stack-box" data-aos="fade-up">
+              <img src="./src/png/fastapi.png" alt="FastAPI skill" class="tech-stack-logo" />
+              <span class="tooltip">FastAPI</span>
+            </li>
+
+            <li class="tech-stack-box" data-aos="fade-up">
+              <img src="./src/png/tensorflow.png" alt="TensorFlow skill" class="tech-stack-logo" />
+              <span class="tooltip">TensorFlow</span>
+            </li>
+
+            <li class="tech-stack-box" data-aos="fade-up">
+              <img src="./src/png/langchain.png" alt="LangChain skill" class="tech-stack-logo" />
+              <span class="tooltip">LangChain</span>
+            </li>
+
+            <li class="tech-stack-box" data-aos="fade-up">
+              <img src="./src/svg/autogen.svg" alt="AutoGen skill" class="tech-stack-logo" />
+              <span class="tooltip">AutoGen</span>
+            </li>
+
+            <li class="tech-stack-box" data-aos="fade-up">
+              <img src="./src/png/aws.png" alt="AWS skill" class="tech-stack-logo" />
+              <span class="tooltip">AWS</span>
+            </li>
+
+            <li class="tech-stack-box" data-aos="fade-up">
+              <img src="./src/png/googlecloud.png" alt="Google Cloud skill" class="tech-stack-logo" />
+              <span class="tooltip">Google Cloud</span>
+            </li>
+
+            <li class="tech-stack-box" data-aos="fade-up">
+              <img src="./src/png/kubernetes.png" alt="Kubernetes skill" class="tech-stack-logo" />
+              <span class="tooltip">Kubernetes</span>
+            </li>
+
+            <li class="tech-stack-box" data-aos="fade-up">
+              <img src="./src/png/mongodb.png" alt="MongoDB skill" class="tech-stack-logo" />
+              <span class="tooltip">MongoDB</span>
+            </li>
+
+            <li class="tech-stack-box" data-aos="fade-up">
+              <img src="./src/png/sql.png" alt="SQL skill" class="tech-stack-logo" />
+              <span class="tooltip">SQL</span>
+            </li>
+
+            <li class="tech-stack-box" data-aos="fade-up">
+              <img src="./src/png/pythonlogo.png" alt="ElasticSearch skill" class="tech-stack-logo" />
+              <span class="tooltip">ElasticSearch</span>
+            </li>
+
             </li>
           </ul>
         </div>
@@ -416,6 +572,27 @@ What are you doing here?! you sneaky developer...
           <div data-aos="fade-up" class="project-box-wrapper">
             <div class="project-box project-box2" id="project-box2">
               <div class="info-div">
+                <img src="src/jpg/StocksCropped.jpg" alt="Medical AI Platform favicon" class="faviconforProject" />
+                <article class="ProjectHeading">Medical AI Platform - Patient Summarization & RAG System</article>
+                <p class="ProjectDescription">
+                  Built an automated patient summarization system using React, FastAPI, GPT-4o/DeepSeek R1 achieving ≤10 second processing. Engineered medical RAG system with LangChain, FAISS, Llama 3, and BGE-Small-EN embeddings attaining 1000+ words/second PDF processing.
+                </p>
+                <div class="project-buttons">
+                  <a href="#" target="_blank" class="github-redirect"
+                    aria-label="Visit Medical AI Platform on GitHub">
+                    <img src="src/svg/github.svg" alt="github redirect button" />
+                  </a>
+                </div>
+              </div>
+              <div class="image-div">
+                <img src="src/png/StockPortfolio2.png" alt="Medical AI Platform image" />
+              </div>
+            </div>
+          </div>
+
+          <div data-aos="fade-up" class="project-box-wrapper">
+            <div class="project-box project-box2" id="project-box2">
+              <div class="info-div">
                 <img src="src/jpg/StocksCropped.jpg" alt="Stock-Portfolio-Manager favicon" class="faviconforProject" />
                 <article class="ProjectHeading">Stock Portfolio Manager</article>
                 <p class="ProjectDescription">
@@ -430,28 +607,6 @@ What are you doing here?! you sneaky developer...
               </div>
               <div class="image-div">
                 <img src="src/png/StockPortfolio2.png" alt="Stock-Portfolio-Manager image" />
-              </div>
-            </div>
-          </div>
-
-          <div class="project-box-wrapper" data-aos="fade-up">
-            <div class="project-box project-box5" id="project-box5">
-              <div class="info-div">
-                <img src="src/jpg/TravelCropped.jpg" alt="Travel_Itinerary_Planner website favicon"
-                  class="faviconforProject" />
-                <article class="ProjectHeading">Travel Itinerary Planner</article>
-                <p class="ProjectDescription">
-                  Travel Itinerary Planner: A platform that simplifies vacation planning and trip coordination by leveraging detailed itineraries and insights from experienced travelers.
-                </p>
-                <div class="project-buttons">
-                  <a href="https://github.com/DhyanVGowda/Travel_Itinerary_Planner.git" target="_blank" class="github-redirect"
-                    aria-label="Visit Travel_Itinerary_Planner on GitHub">
-                    <img src="src/svg/github.svg" alt="github redirect button" />
-                  </a>
-                </div>
-              </div>
-              <div class="image-div">
-                <img src="src/jpg/TravelItinerary2.JPG" alt="Travel_Itinerary_Planner website preview image" />
               </div>
             </div>
           </div>
@@ -544,55 +699,38 @@ What are you doing here?! you sneaky developer...
               </div>
             </div>
           </div>
+
           <!-- ---------------------- -->
+
+          <div class="project-box-wrapper" data-aos="fade-up">
+            <div class="project-box project-box5" id="project-box5">
+              <div class="info-div">
+                <img src="src/jpg/TravelCropped.jpg" alt="Travel_Itinerary_Planner website favicon"
+                  class="faviconforProject" />
+                <article class="ProjectHeading">Travel Itinerary Planner</article>
+                <p class="ProjectDescription">
+                  Travel Itinerary Planner: A platform that simplifies vacation planning and trip coordination by leveraging detailed itineraries and insights from experienced travelers.
+                </p>
+                <div class="project-buttons">
+                  <a href="https://github.com/DhyanVGowda/Travel_Itinerary_Planner.git" target="_blank" class="github-redirect"
+                    aria-label="Visit Travel_Itinerary_Planner on GitHub">
+                    <img src="src/svg/github.svg" alt="github redirect button" />
+                  </a>
+                </div>
+              </div>
+              <div class="image-div">
+                <img src="src/jpg/TravelItinerary2.JPG" alt="Travel_Itinerary_Planner website preview image" />
+              </div>
+            </div>
+          </div>
+
+          <!-- ---------------------- -->
+
         </div>
       </div>
     </section>
     <!-- projects section ends  -->
 
-  <section class="experience-section-container" id="experience" data-aos="fade-up">
-    <div class="experience-section">
-      <div class="section-heading">
-        <h2 class="section-heading-article" tabindex="0" aria-label="Experience heading">
-          &#60;/Experience&#62;
-        </h2>
-        <p class="sectionHeadingP"></p>
-      </div>
-
-      <div class="info-dp-section">
-        <div class="about-info">
-          <p tabindex="0">
-            During my internship at Torus Solutions in Mysuru, India, I collaborated on developing a food recycling web application using Java Spring Boot and ReactJS, streamlining the collection and distribution of surplus food to underprivileged communities.
-          </p>
-          <br />
-          <p tabindex="0">
-            I actively contributed to Agile sprints, collaborating with cross-functional teams to develop core functionalities for a food recycling web application, optimize MySQL performance, and implement real-time updates, enhancing user experience and system reliability.
-          </p>
-          <br />
-          <p tabindex="0">
-            I designed and implemented AI agents within Agile processes, enabling inter-agent communication to automate LOC generation, timelines, and project deliverables, demonstrating my ability to integrate advanced tools to streamline planning workflows.
-          </p>
-          <br />
-           <!-- Internship_letter button -->
-    <button class="resume-btn" id="resume-btn" onclick="openURL1()">
-      <div class="sign">
-        <svg viewBox="0 0 640 512">
-          <path
-            d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144zm79-167l80 80c9.4 9.4 24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-39 39V184c0-13.3-10.7-24-24-24s-24 10.7-24 24V318.1l-39-39c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9z" />
-        </svg>
-      </div>
-
-      <div class="text">Internship Certificate</div>
-    </button>
-        </div>
-
-        <div class="dp1 dp" data-aos="fade-up">
-          <img src="src/png/internship1.jpg" alt="Experience" tabindex="0" aria-label="image of internship" />
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- about section ends  -->
   </main>
 
   <!-- main ends here -->
@@ -653,7 +791,7 @@ What are you doing here?! you sneaky developer...
         <div class="footer-bottom">
           <article>
             Designed & Built by Dhyan Vasudeva Gowda
-            &#169; twentytwentyfour
+            &#169; twentytwentyfive
           </article>
         </div>
       </div>
