@@ -1165,49 +1165,66 @@ noscript {
   margin-top: 0px;
 }
 
-.tech-stack-box,
-.tooltip {
-  align-items: center;
-  display: flex;
-}
-
 .tech-stack-box {
-  width: 160px;
-  height: 160px;
+  width: 80px;
+  height: 80px;
   justify-content: center;
-  border-radius: 30px;
-  border: 1px solid var(--tech-stack-box-border-color);
+  border-radius: 15px;
+  border: 2px solid transparent;
   position: relative;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .tech-stack-box img {
-  width: 80%;
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  bottom: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(51, 51, 51, 0.95);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 1000;
+  max-width: 120px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid rgba(51, 51, 51, 0.95);
 }
 
 .tech-stack-box:hover .tooltip {
   opacity: 1;
-  transition-duration: 0.3s;
-}
-
-.tooltip {
-  position: absolute;
-  top: -20px;
-  opacity: 0;
-  background: linear-gradient(
-    to bottom right,
-    var(--tech-stack-box-first-color),
-    var(--tech-stack-box-second-color)
-  );
-  border: 1px solid var(--tech-stack-box-border-color);
-  padding: 5px 10px;
-  border-radius: 5px;
-  justify-content: center;
-  transition-duration: 0.2s;
-  pointer-events: none;
-  letter-spacing: 0.5px;
-  font-size: 1.6rem;
-  backdrop-filter: blur(5px);
-  font-weight: 500;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-2px);
 }
 
 .cta,
@@ -1219,7 +1236,7 @@ footer {
 }
 
 .projects-section-container {
-  padding-top: 150px;
+  padding-top: 0px;
   padding-bottom: 100px;
   display: flex;
   align-items: center;
@@ -2393,6 +2410,13 @@ footer {
   opacity: 1;
 }
 
+/* Specific styling for Torus Solutions logo to match other logos */
+#torus-solutions-logo img,
+#torus-solutions-logo-dup img {
+  height: 47%;
+  width: 100%;
+}
+
 /* Horizontal Scrolling Animation */
 @keyframes scrollLogos {
   0% {
@@ -2475,5 +2499,185 @@ footer {
   .company-logos-scroll {
     gap: 60px; /* Increased from 20px to 60px for proportional spacing */
     padding: 10px;
+  }
+}
+
+/* Skills Section Styling */
+.skills-section-container {
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.skills-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Skills Category Headings */
+.skills-category-heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin: 40px 0 20px 0;
+  text-align: center;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.skills-category-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #007bff, #00d4ff);
+  border-radius: 2px;
+}
+
+.skills-category-heading:first-of-type {
+  margin-top: 30px;
+}
+
+/* Frontend Dev Section */
+.frontend-dev-section {
+  margin-top: 0px;
+}
+
+.frontend-dev-heading {
+  height: 50px;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Tech Stack Wrapper */
+.tech-stack-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 0px;
+  list-style: none;
+  padding: 0;
+}
+
+/* Tech Stack Box */
+.tech-stack-box {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.tech-stack-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: #007bff;
+}
+
+.tech-stack-logo {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.tech-stack-box:hover .tech-stack-logo {
+  transform: scale(1.1);
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  bottom: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(51, 51, 51, 0.95);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 1000;
+  max-width: 120px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid rgba(51, 51, 51, 0.95);
+}
+
+.tech-stack-box:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-2px);
+}
+
+/* Responsive Design for Skills Section */
+@media screen and (max-width: 768px) {
+  .skills-category-heading {
+    font-size: 1.5rem;
+    margin: 30px 0 15px 0;
+  }
+
+  .tech-stack-wrapper {
+    gap: 15px;
+  }
+
+  .tech-stack-box {
+    width: 70px;
+    height: 70px;
+  }
+
+  .frontend-dev-heading {
+    font-size: 2rem;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .skills-category-heading {
+    font-size: 1.3rem;
+    margin: 25px 0 12px 0;
+  }
+
+  .tech-stack-wrapper {
+    gap: 12px;
+  }
+
+  .tech-stack-box {
+    width: 60px;
+    height: 60px;
+  }
+
+  .frontend-dev-heading {
+    font-size: 1.8rem;
+    height: 35px;
   }
 }
