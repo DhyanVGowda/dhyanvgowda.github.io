@@ -617,8 +617,17 @@ noscript {
 }
 
 #name {
-  font-size: 9rem;
-  width: fit-content;
+  /* The name is about 11.4em wide, so 7vw keeps it on one line within max-width. */
+  font-size: min(9rem, 7vw);
+  /* Not fit-content: .text-content is narrower than the name on desktop. */
+  width: max-content;
+  max-width: 80vw;
+  flex-wrap: wrap;
+  gap: 0 0.198em;
+}
+
+#name div {
+  display: flex;
 }
 
 #work {
@@ -1673,6 +1682,10 @@ footer {
   .skills-section,
   .text-content {
     width: 80%;
+  }
+
+  #name {
+    max-width: 88vw;
   }
 
   .about-section {
