@@ -2518,7 +2518,7 @@ footer {
 .skills-category-heading {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #333;
+  color: var(--color-white);
   margin: 40px 0 20px 0;
   text-align: center;
   position: relative;
@@ -2680,4 +2680,44 @@ footer {
     font-size: 1.8rem;
     height: 35px;
   }
+}
+
+@media screen and (max-width: 1400px) {
+  .navbar-tabs-ul {
+    gap: 3vw;
+  }
+}
+
+.tech-stack-text {
+  padding: 2px;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.tech-stack-box-text .tooltip {
+  max-width: none;
+}
+
+.job-section a {
+  color: var(--static-heading-gradient-blue);
+  text-decoration: underline;
+}
+
+.patent-item + .patent-item {
+  margin-top: 25px;
+}
+
+.patent-item h3 {
+  color: #00ff88;
+  margin-bottom: 8px;
+  font-size: 2.2rem;
+}
+
+/* !important: job titles set their colour inline. */
+.light-mode .job-section h3,
+.light-mode .patent-item h3 {
+  color: var(--static-heading-gradient-blue) !important;
 }
