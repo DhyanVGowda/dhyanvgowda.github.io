@@ -212,15 +212,13 @@ function showJobDetails(companyId) {
     job.classList.remove("active");
   });
 
-  // Add active class to clicked logo and its duplicate
-  const activeLogo = document.getElementById(companyId + "-logo");
-  const activeLogoDup = document.getElementById(companyId + "-logo-dup");
-  if (activeLogo) {
-    activeLogo.classList.add("active");
-  }
-  if (activeLogoDup) {
-    activeLogoDup.classList.add("active");
-  }
+  // Add active class to clicked logo and its duplicates
+  ["-logo", "-logo-dup", "-logo-dup2"].forEach((suffix) => {
+    const logo = document.getElementById(companyId + suffix);
+    if (logo) {
+      logo.classList.add("active");
+    }
+  });
 
   // Add active class to corresponding job section
   const activeJob = document.getElementById(companyId + "-job");
@@ -232,6 +230,7 @@ function showJobDetails(companyId) {
       ".job-descriptions-container"
     );
     if (jobDescriptionsContainer) {
+      jobDescriptionsContainer.scrollTop = 0;
       jobDescriptionsContainer.scrollIntoView({
         behavior: "smooth",
         block: "start",
@@ -245,15 +244,117 @@ document.addEventListener("DOMContentLoaded", function () {
   // Set the first job (MG Health Tech) as active by default
   showJobDetails("mg-health-tech");
 
-  // Add pause/resume functionality for the scrolling animation
-  const scrollContainer = document.querySelector(".company-logos-scroll");
-  if (scrollContainer) {
-    scrollContainer.addEventListener("mouseenter", function () {
-      this.style.animationPlayState = "paused";
-    });
-
-    scrollContainer.addEventListener("mouseleave", function () {
-      this.style.animationPlayState = "running";
-    });
-  }
+  initLogoCarousel();
 });
+
+function initLogoCarousel() {
+  const scroller = document.querySelector(".company-logos-scroll-container");
+  const first = document.getElementById("mg-health-tech-logo");
+  const firstDup = document.getElementById("mg-health-tech-logo-dup");
+  if (!scroller || !first || !firstDup) {
+    return;
+  }
+
+  const pixelsPerSecond = 55;
+  const touchResumeDelay = 2000;
+  let position = 1;
+  let lastFrame = performance.now();
+  let hovering = false;
+  let dragging = false;
+  let dragged = false;
+  let dragStartX = 0;
+  let dragStartScroll = 0;
+  let resumeAt = 0;
+
+  scroller.scrollLeft = position;
+
+  // The logo sets are identical, so jumping by one set's width is invisible.
+  scroller.addEventListener("scroll", () => {
+    const setWidth = firstDup.offsetLeft - first.offsetLeft;
+    let jump = 0;
+    if (scroller.scrollLeft > setWidth) {
+      jump = -setWidth;
+    } else if (scroller.scrollLeft <= 0) {
+      jump = setWidth;
+    }
+    if (jump) {
+      scroller.scrollLeft += jump;
+      position = scroller.scrollLeft;
+      dragStartScroll += jump;
+    }
+  });
+
+  function advance(now) {
+    const elapsed = Math.min(now - lastFrame, 100);
+    lastFrame = now;
+    if (!hovering && !dragging && now >= resumeAt) {
+      // scrollLeft can round to whole pixels, so the running total is kept separately.
+      if (Math.abs(position - scroller.scrollLeft) > 1) {
+        position = scroller.scrollLeft;
+      }
+      position += (pixelsPerSecond * elapsed) / 1000;
+      scroller.scrollLeft = position;
+    }
+    requestAnimationFrame(advance);
+  }
+  requestAnimationFrame(advance);
+
+  scroller.addEventListener("pointerenter", (e) => {
+    if (e.pointerType === "mouse") {
+      hovering = true;
+    }
+  });
+  scroller.addEventListener("pointerleave", (e) => {
+    if (e.pointerType === "mouse") {
+      hovering = false;
+    }
+  });
+
+  const pauseForTouch = () => {
+    resumeAt = Infinity;
+  };
+  const resumeAfterTouch = () => {
+    resumeAt = performance.now() + touchResumeDelay;
+  };
+  scroller.addEventListener("touchstart", pauseForTouch, { passive: true });
+  scroller.addEventListener("touchend", resumeAfterTouch, { passive: true });
+  scroller.addEventListener("touchcancel", resumeAfterTouch, { passive: true });
+
+  scroller.addEventListener("pointerdown", (e) => {
+    if (e.pointerType !== "mouse") {
+      return;
+    }
+    dragging = true;
+    dragged = false;
+    dragStartX = e.clientX;
+    dragStartScroll = scroller.scrollLeft;
+  });
+  window.addEventListener("pointermove", (e) => {
+    if (!dragging) {
+      return;
+    }
+    const distance = e.clientX - dragStartX;
+    if (Math.abs(distance) > 5) {
+      dragged = true;
+    }
+    if (dragged) {
+      scroller.scrollLeft = dragStartScroll - distance;
+    }
+  });
+  window.addEventListener("pointerup", () => {
+    dragging = false;
+  });
+
+  // A drag that ends on a logo must not also select it.
+  scroller.addEventListener(
+    "click",
+    (e) => {
+      if (dragged) {
+        e.stopPropagation();
+        dragged = false;
+      }
+    },
+    true
+  );
+  scroller.addEventListener("dragstart", (e) => e.preventDefault());
+}
