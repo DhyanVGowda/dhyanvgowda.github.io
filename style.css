@@ -2710,6 +2710,16 @@ footer {
   text-align: center;
 }
 
+.tech-stack-box-text {
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tech-stack-box-text .tech-stack-logo {
+  width: 46%;
+  height: 46%;
+}
+
 .tech-stack-box-text .tooltip {
   max-width: none;
 }
