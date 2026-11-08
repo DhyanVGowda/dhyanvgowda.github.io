@@ -632,7 +632,8 @@ noscript {
 
 #work {
   font-size: 6rem;
-  width: fit-content;
+  width: max-content;
+  max-width: 75vw;
 }
 
 #name,
@@ -739,6 +740,12 @@ noscript {
 #work div {
   display: flex;
   margin: 0 12px 0 0;
+}
+
+/* Each phrase moves to a new line whole, and only breaks up when it can't fit. */
+#work > div {
+  flex-wrap: wrap;
+  margin: 0;
 }
 
 .jello:hover {
@@ -1684,7 +1691,8 @@ footer {
     width: 80%;
   }
 
-  #name {
+  #name,
+  #work {
     max-width: 88vw;
   }
 
@@ -2726,6 +2734,38 @@ footer {
 
 .job-section a {
   color: var(--static-heading-gradient-blue);
+  text-decoration: underline;
+}
+
+.compact-projects {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.compact-project {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 30px;
+  border-radius: 30px;
+  border: 1px solid var(--tech-stack-box-border-color);
+  background-image: linear-gradient(
+    to bottom right,
+    var(--tech-stack-box-first-color),
+    var(--tech-stack-box-second-color)
+  );
+}
+
+.compact-project .ProjectHeading {
+  font-size: 2.4rem;
+}
+
+.product-link {
+  color: var(--static-heading-gradient-blue);
+  font-size: 1.7rem;
   text-decoration: underline;
 }
 
